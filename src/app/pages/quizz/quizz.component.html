@@ -1,0 +1,35 @@
+<div class="pokedex">
+  <img id="pokedex" src="../../../assets/img/pokedex.png" alt="" />
+  <div class="points">
+    <p>POINTS</p>
+    <p>{{points}}</p>
+  </div>
+  <img
+    id="pokemon"
+    width="200"
+    [src]="
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/' +
+      pokemon.id +
+      '.gif'
+    "
+    alt="no img"
+    class="poke__img"
+  />
+</div>
+<h4>Who's That Pokémon?</h4>
+
+<div class="controls">
+  <div class="options">
+    <button
+      [ngClass]="{pokeName, green:answered && pokeName==pokemon.name, red:answered && pokeName!=pokemon.name}"
+      *ngFor="let pokeName of pokemonNames"
+      [disabled]="answered"
+      (click)="validateSelection(pokeName)"
+    >
+      {{ pokeName }}
+    </button>
+  </div>
+  <button [disabled]="skips <= 0" (click)="skip()">
+    Skip (remaining {{ skips }})
+  </button>
+</div>

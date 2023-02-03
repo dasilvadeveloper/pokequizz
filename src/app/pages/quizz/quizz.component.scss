@@ -1,0 +1,112 @@
+:host {
+  width: 100vw;
+  height: 100vh;
+  background-color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 100px;
+
+  .pokedex {
+    position: relative;
+    width: 300px;
+    height: 500px;
+
+    .points {
+      width: 55%;
+      left: 39%;
+      bottom: 6%;
+      transform: translate(-50%);
+      position: absolute;
+      padding: 40px;
+      border-radius: 20px;
+      color: rgb(0, 0, 0);
+      font-weight: 500;
+
+      p {
+        font-family: 'Press Start 2P', cursive;
+        padding: 2px;
+        font-size: 12px;
+      }
+    }
+
+    #pokedex {
+      position: absolute;
+      width: 100%;
+    }
+
+    #pokemon {
+      width: 55%;
+      left: 45%;
+      top: 21%;
+      transform: translate(-50%);
+      position: absolute;
+      padding: 40px;
+      border-radius: 20px;
+    }
+  }
+
+  .controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .options {
+      list-style: none;
+      display: flex;
+
+      .visible {
+        display: inline;
+      }
+
+      button {
+        transition: all 0.3s ease-in-out;
+        padding: 25px;
+        border-radius: 20px;
+        margin: 10px;
+        background-color: #e0e0e0;
+        box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2),
+          inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
+
+        &:hover {
+          cursor: pointer;
+          background-color: #ebebeb;
+        }
+      }
+
+      .green {
+        background: rgb(94, 214, 94);
+        box-shadow: none;
+
+        &:hover {
+          cursor: pointer;
+          background: rgb(94, 214, 94) !important;
+        }
+      }
+
+      .red {
+        background: rgb(214, 94, 94);
+        box-shadow: none;
+
+        &:hover {
+          cursor: pointer;
+          background: rgb(214, 94, 94) !important;
+        }
+      }
+    }
+    button {
+      transition: all 0.3s ease-in-out;
+      background-color: #e0e0e0;
+      box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2),
+        inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
+      border: none;
+      padding: 25px;
+      border-radius: 20px;
+      margin: 10px;
+      &:hover {
+        cursor: pointer;
+        background-color: #ebebeb;
+      }
+    }
+  }
+}
