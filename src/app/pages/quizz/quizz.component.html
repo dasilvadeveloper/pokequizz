@@ -2,7 +2,7 @@
   <img id="pokedex" src="../../../assets/img/pokedex.png" alt="" />
   <div class="points">
     <p>POINTS</p>
-    <p>{{points}}</p>
+    <p>{{ points }}</p>
   </div>
   <img
     id="pokemon"
@@ -29,7 +29,15 @@
       {{ pokeName }}
     </button>
   </div>
-  <button [disabled]="skips <= 0" (click)="skip()">
+  <button [disabled]="skips <= 0 || answered" (click)="skip()">
     Skip (remaining {{ skips }})
   </button>
+</div>
+<div class="copyright">
+  <p>developed by</p>
+  <p>
+    <a href="https://www.instagram.com/hendrik.lelis/">
+      hendrik lelis
+    </a>
+  </p>
 </div>

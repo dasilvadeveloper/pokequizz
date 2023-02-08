@@ -14,6 +14,7 @@ export class QuizzComponent implements OnInit {
   }
 
   points: number = 0
+  pointsSum: number = 6
 
   answered: boolean = false
 
@@ -31,10 +32,10 @@ export class QuizzComponent implements OnInit {
 
   validateSelection(pokeName: string) {
     if (this.pokemon.name == pokeName) {
-      this.points += 10
+      this.points += this.pointsSum
     } else {
-      if (this.points >= 10) {
-        this.points -= 10
+      if (this.points >= this.pointsSum) {
+        this.points -= this.pointsSum
       } else {
         this.points = 0
       }
@@ -43,7 +44,7 @@ export class QuizzComponent implements OnInit {
     setTimeout(() => {
       this.answered = false
       this.reload()
-    }, 1000);
+    }, 2000);
 
     this.answered = true
   }
@@ -65,6 +66,7 @@ export class QuizzComponent implements OnInit {
         this.pokemon = pokemon
         this.get3Random().then(pokes => {
           this.pokemonNames = this.shuffle([...pokes, this.pokemon.name])
+          this.answered = false
 
 
         })
@@ -96,9 +98,10 @@ export class QuizzComponent implements OnInit {
   }
 
   skip() {
+    this.answered = true
 
-    if (this.points >= 5) {
-      this.points -= 5
+    if (this.points >= (this.pointsSum / 2)) {
+      this.points -= (this.pointsSum / 2)
     }
     if (this.skips > 0) {
       this.skips--

@@ -12,11 +12,12 @@
     position: relative;
     width: 300px;
     height: 500px;
+    min-height: 500px;
 
     .points {
       width: 55%;
       left: 39%;
-      bottom: 6%;
+      bottom: 20%;
       transform: translate(-50%);
       position: absolute;
       padding: 40px;
@@ -25,7 +26,7 @@
       font-weight: 500;
 
       p {
-        font-family: 'Press Start 2P', cursive;
+        font-family: "Press Start 2P", cursive;
         padding: 2px;
         font-size: 12px;
       }
@@ -34,13 +35,14 @@
     #pokedex {
       position: absolute;
       width: 100%;
+      filter: drop-shadow(rgba(0, 0, 0, 0.137) 10px 0px 20px);
     }
 
     #pokemon {
       width: 55%;
       left: 45%;
-      top: 21%;
-      transform: translate(-50%);
+      top: 35%;
+      transform: translate(-50%, -50%);
       position: absolute;
       padding: 40px;
       border-radius: 20px;
@@ -65,8 +67,8 @@
         border-radius: 20px;
         margin: 10px;
         background-color: #e0e0e0;
-        box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2),
-          inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
+        box-shadow: inset 6px 6px 10px 0 rgba(48, 48, 48, 0.14),
+          inset -6px -6px 10px 0 rgba(255, 255, 255, 0.489);
 
         &:hover {
           cursor: pointer;
@@ -97,16 +99,86 @@
     button {
       transition: all 0.3s ease-in-out;
       background-color: #e0e0e0;
-      box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2),
-        inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
+      box-shadow: inset 6px 6px 10px 0 rgba(48, 48, 48, 0.14),
+        inset -6px -6px 10px 0 rgba(255, 255, 255, 0.489);
       border: none;
       padding: 25px;
       border-radius: 20px;
       margin: 10px;
       &:hover {
         cursor: pointer;
-        background-color: #ebebeb;
+        background-color: #e5e5e5;
+        font-weight: 500;
+        transform: scale(1.03);
       }
+    }
+  }
+
+  .copyright {
+    text-align: center;
+    font-size: 0.8rem;
+
+    a {
+      color: rgb(126, 160, 168);
+      font-weight: 500;
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .pokeName {
+    padding: 20px 10px !important;
+    border-radius: 15px !important;
+  }
+}
+@media only screen and (max-width: 550px) {
+  :host {
+    padding: 50px 10px !important;
+    display: flex;
+    align-items: center !important;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+
+  .pokedex {
+    width: 100vw !important;
+    height: 400px !important;
+    overflow: hidden;
+    min-height: 400px !important;
+    display: flex;
+    justify-content: center;
+
+    .points {
+      width: 150px !important;
+      left: 45% !important;
+      top: 62% !important;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      display: flex;
+      padding: 40px;
+      border-radius: 20px;
+
+      p {
+        font-family: "Press Start 2P", cursive;
+        padding: 2px;
+        font-size: .6rem !important;
+      }
+    }
+
+    #pokedex {
+      position: absolute;
+      width: 400px !important;
+      filter: drop-shadow(rgba(0, 0, 0, 0.137) 10px 0px 20px);
+    }
+
+    #pokemon {
+      width: 150px !important;
+      left: 45%;
+      top: 53% !important;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      padding: 40px;
+      border-radius: 20px;
     }
   }
 }
